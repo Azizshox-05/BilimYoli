@@ -149,7 +149,7 @@ logoutBtn.addEventListener("click", async () => {
   }
 });
 
-```javascript
+
 // Avvalgi sessiyani tekshirish
 async function restoreSession() {
   const { data, error } = await supabase.auth.getSession();
@@ -179,4 +179,3 @@ supabase.auth.onAuthStateChange((event, session) => {
     showAccount(null);
   }
 });
-```
