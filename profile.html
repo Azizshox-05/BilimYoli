@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101426">
+  <title>Profil — BilimYo‘li</title>
+  <link rel="stylesheet" href="profile.css">
+  <script type="module" src="profile.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">BILIM<span>YO‘LI</span></a>
+    <a class="back-link" href="index.html">← Darsliklarga qaytish</a>
+  </header>
+
+  <main class="profile-container">
+    <div class="eyebrow">SHAXSIY KABINET</div>
+    <h1>Mening <span>profilim</span></h1>
+    <p class="intro">Shaxsiy ma’lumotlaringiz va o‘quv natijalaringiz.</p>
+
+    <p id="profileMessage" class="message">Akkaunt tekshirilmoqda...</p>
+
+    <section id="profileContent" hidden>
+      <article class="profile-card">
+
+<div class="avatar-section">
+  <img
+    id="avatarImage"
+    src=""
+    alt="Profil rasmi"
+    hidden
+  />
+
+  <div class="avatar" id="avatar">B</div>
+
+  <label for="avatarInput" class="avatar-upload-label">
+    📸 Profil rasmini tanlash
+  </label>
+
+  <input
+    type="file"
+    id="avatarInput"
+    accept="image/png,image/jpeg,image/webp"
+    hidden
+  />
+
+  <p id="avatarMessage" role="status"></p>
+</div>
+
+        <div class="identity">
+          <h2 id="fullName">Foydalanuvchi</h2>
+          <p id="email">Email yuklanmoqda...</p>
+          
+<section class="profile-edit">
+  <h2>Shaxsiy ma’lumotlar</h2>
+
+  <form id="editProfileForm">
+    <label for="editFullName">Ismingiz va familiyangiz</label>
+
+    <input
+      type="text"
+      id="editFullName"
+      placeholder="Ism va familiyangiz"
+      minlength="2"
+      maxlength="80"
+      required
+    />
+
+    <button type="submit" id="saveProfileButton">
+      O‘zgarishlarni saqlash
+    </button>
+
+    <p id="editProfileMessage" role="status"></p>
+  </form>
+</section>
+
+          <span class="account-badge">BilimYo‘li foydalanuvchisi</span>
+        </div>
+      </article>
+
+      <h2 class="section-title">Mening natijalarim</h2>
+
+      <section class="stats">
+        <article class="stat-card">
+          <span class="stat-icon">📚</span>
+          <p>Tugatilgan darslar</p>
+          <strong id="completedLessons">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">🏆</span>
+          <p>Eng yaxshi test natijasi</p>
+          <strong id="bestScore">0%</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">✍️</span>
+          <p>Test urinishlari</p>
+          <strong id="testAttempts">0</strong>
+        </article>
+      </section>
+
+      <div class="profile-actions">
+        <a class="primary-button" href="index.html#courses">
+          Darslarni davom ettirish
+        </a>
+        <button id="logoutButton" class="logout-button" type="button">
+          Akkauntdan chiqish
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Bilim sari har bir qadam muhim. © BilimYo‘li</footer>
+</body>
+</html>

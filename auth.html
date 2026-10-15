@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BilimYo'li  Kirish</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <main class="auth-container">
+    <div class="brand">?? BilimYo'li</div>
+    <p class="subtitle">Bilim sari birinchi qadam!</p>
+
+    <div class="tabs">
+      <button id="loginTab" class="tab active" type="button">Kirish</button>
+      <button id="registerTab" class="tab" type="button">Ro'yxatdan o'tish</button>
+    </div>
+
+    <form id="authForm">
+      <div id="nameGroup" class="field hidden">
+        <label for="fullName">Ism va familiya</label>
+        <input id="fullName" type="text" autocomplete="name"
+          placeholder="Ism Familiya">
+      </div>
+
+      <div class="field">
+        <label for="email">Email manzilingiz</label>
+        <input id="email" type="email" autocomplete="email"
+          placeholder="example@gmail.com" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Parol</label>
+        <input id="password" type="password"
+          autocomplete="current-password"
+          placeholder="Kamida 6 ta belgi" minlength="6" required>
+      </div>
+
+      <button id="submitBtn" class="submit-btn" type="submit">
+        Kirish
+      </button>
+    </form>
+
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+
+    <section id="accountPanel" class="account hidden">
+      <h2>Akkauntingizga xush kelibsiz!</h2>
+      <p id="userName"></p>
+      <p id="userEmail"></p>
+      <button id="logoutBtn" class="logout-btn" type="button">
+        Tizimdan chiqish
+      </button>
+    </section>
+
+    <p class="footer"> 2026 BilimYo'li</p>
+  </main>
+
+  <script type="module" src="auth.js"></script>
+</body>
+</html>

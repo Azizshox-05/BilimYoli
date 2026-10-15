@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101426">
+  <meta name="description" content="BilimYo'li  kompyuter savodxonligi va raqamli bilimlarni o�rganish platformasi.">
+  <title>BilimYo'li  Bilim sari yo'l</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="BilimYo�li bosh sahifa">
+      <span class="brand-icon">B</span>
+      <span>Bilim<span class="brand-accent">Yo'li</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish">?</button>
+
+<nav class="nav-links" id="navLinks">
+  <a href="#home">Bosh sahifa</a>
+  <a href="#courses">Kurslar</a>
+  <a href="#dashboard">Natijalarim</a>
+  <a href="#about">Loyiha haqida</a>
+  <a href="profile.html">Mening profilim</a>
+</nav>
+
+    <a class="nav-cta" href="#courses">O'qishni boshlash ?</a>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="status-dot"></span> O'RGANISH UCHUN YANGI IMKONIYAT</div>
+        <h1>Bilim sari yo'l<br><span>shu yerdan boshlanadi.</span></h1>
+        <p>
+          Kompyuter savodxonligi va raqamli ko'nikmalarni sodda darslar,
+          amaliy mashqlar va qiziqarli testlar orqali o'rganing.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#courses">Kurslarni ko'rish <span>></span></a>
+          <a class="btn btn-secondary" href="#dashboard">Natijalarimni ko'rish</a>
+        </div>
+        <div class="hero-trust">
+          <div class="avatar-stack"><span>B</span><span>Y</span><span>+</span></div>
+          <span>Bosqichma-bosqich o'rganing, o'z natijangizni kuzating.</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Bilim va texnologiya tasviri">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="floating-chip chip-top">? Raqamli bilim</div>
+        <div class="learning-card">
+          <div class="learning-card-top"><span class="mini-logo">B</span><span class="live-label">BILIMYO'LI</span></div>
+          <div class="big-symbol">?</div>
+          <div class="learning-card-title">Kelajak ko'nikmalari</div>
+          <div class="learning-card-sub">Bilimni bugun boshlang.</div>
+          <div class="demo-progress"><span></span></div>
+          <div class="demo-footer"><span>Har kuni yangi bilim</span><span>?</span></div>
+        </div>
+        <div class="floating-chip chip-bottom">? O'z sur'atingizda o�rganing</div>
+        <div class="sparkle sparkle-one">?</div>
+        <div class="sparkle sparkle-two">?</div>
+      </div>
+    </section>
+
+    <section class="stats-strip section">
+      <div class="stat-item"><span class="stat-icon">?</span><div><strong id="statCourses">8</strong><span>O'quv kursi</span></div></div>
+      <div class="stat-item"><span class="stat-icon">?</span><div><strong id="statLessons">24</strong><span>O'quv darsi</span></div></div>
+      <div class="stat-item"><span class="stat-icon">?</span><div><strong id="statCompleted">0</strong><span>Tugatilgan dars</span></div></div>
+      <div class="stat-item"><span class="stat-icon">?</span><div><strong id="statAverage">0%</strong><span>O'rtacha test natijasi</span></div></div>
+    </section>
+
+    <section class="section courses-section" id="courses">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">BILIM OLISHNI BOSHLANG</div>
+          <h2>O'zingizga mos <span>kursni tanlang.</span></h2>
+          <p>Har bir kursda tushunarli darslar va alohida testlar mavjud.</p>
+        </div>
+        <div class="course-search">
+          <span>?</span>
+          <input id="courseSearch" type="search" placeholder="Kurs qidirish..." aria-label="Kurs qidirish">
+        </div>
+      </div>
+      <div class="filter-row" id="filterRow">
+        <button class="filter-btn active" data-filter="Barchasi">Barchasi</button>
+        <button class="filter-btn" data-filter="Boshlang'ich">Boshlang'ich</button>
+        <button class="filter-btn" data-filter="Amaliy">Amaliy</button>
+        <button class="filter-btn" data-filter="Xavfsizlik">Xavfsizlik</button>
+      </div>
+      <div class="course-grid" id="courseGrid"></div>
+      <div class="empty-state hidden" id="emptyState">Bu qidiruv bo'yicha kurs topilmadi.</div>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">SIZNING RIVOJLANISHINGIZ</div>
+          <h2>O'quv <span>natijalaringiz.</span></h2>
+          <p>O'rganilgan darslar va test natijalari ushbu brauzerda saqlanadi.</p>
+        </div>
+        <button class="btn btn-secondary reset-btn" id="resetProgress">? Natijalarni tozalash</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel overall-panel">
+          <div class="panel-heading"><span>Umumiy o'zlashtirish</span><span class="panel-icon">?</span></div>
+          <div class="overall-number" id="overallPercent">0%</div>
+          <p>Jami darslarning bajarilish darajasi</p>
+          <div class="progress-track"><span id="overallBar"></span></div>
+          <div class="panel-foot"><span id="completedSummary">0 / 24 dars</span><span class="muted">Davom eting!</span></div>
+        </article>
+        <article class="panel score-panel">
+          <div class="panel-heading"><span>Eng yaxshi test natijasi</span><span class="panel-icon">?</span></div>
+          <div class="overall-number" id="bestScore">0%</div>
+          <p>Yechilgan testlar orasidagi eng yuqori natija</p>
+          <div class="score-message" id="scoreMessage">Birinchi testingizni yeching!</div>
+        </article>
+        <article class="panel achievements-panel">
+          <div class="panel-heading"><span>Yutuqlar</span><span class="panel-icon">?</span></div>
+          <div class="achievement-list" id="achievementList"></div>
+        </article>
+      </div>
+
+      <div class="panel history-panel">
+        <div class="panel-heading"><span>Kurslar bo'yicha holat</span><span class="muted">Shaxsiy statistika</span></div>
+        <div id="progressList" class="progress-list"></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-card">
+        <div class="about-mark">B<span>Y</span></div>
+        <div>
+          <div class="eyebrow">BILIMYO'LI LOYIHASI</div>
+          <h2>Bilim  eng yaxshi <span>sarmoya.</span></h2>
+          <p>
+            BilimYo'li raqamli savodxonlikni osonroq o'rganish uchun yaratilgan
+            ta'lim loyihasidir. Darslarni ketma-ket o'qing, testlarni yeching
+            va natijalaringizni kuzatib boring.
+          </p>
+          <a href="#courses" class="text-link">O'rganishni boshlash ></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home"><span class="brand-icon">B</span><span>Bilim<span class="brand-accent">Yo�li</span></span></a>
+    <p>Bilim sari har bir qadam muhim. <span id="year"></span> BilimYo'li</p>
+    <a href="#home">Yuqoriga ^</a>
+  </footer>
+
+  <div id="workspace" class="workspace hidden" role="dialog" aria-modal="true" aria-labelledby="workspaceTitle">
+    <div class="workspace-backdrop" id="workspaceBackdrop"></div>
+    <div class="workspace-dialog">
+      <div class="workspace-header">
+        <div><div class="eyebrow">BILIMYO'LI TA'LIM MAYDONI</div><h2 id="workspaceTitle">Kurs</h2></div>
+        <button class="close-btn" id="closeWorkspace" aria-label="Yopish">?</button>
+      </div>
+      <div id="workspaceContent"></div>
+    </div>
+  </div>
+
+ <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- Foydalanuvchi akkaunti -->
+<div class="account-bar">
+  <span id="accountStatus">Akkaunt tekshirilmoqda...</span>
+  <a id="accountLink" href="auth.html">
+    Kirish / Ro‘yxatdan o‘tish
+  </a>
+  <button id="accountLogout" type="button" hidden>
+    Chiqish
+  </button>
+</div>
+
+<script src="script.js"></script>
+<script type="module" src="account.js"></script>
+</body>
+</html>
