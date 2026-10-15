@@ -149,28 +149,34 @@ logoutBtn.addEventListener("click", async () => {
   }
 });
 
-// Sahifa qayta ochilganda avvalgi sessiyani tekshirish
+```javascript
+// Avvalgi sessiyani tekshirish
 async function restoreSession() {
   const { data, error } = await supabase.auth.getSession();
 
   if (error) {
-    showMessage("Sessiyani tekshirishda xatolik yuz berdi.", "error");
+    showMessage(
+      "Sessiyani tekshirishda xatolik yuz berdi.",
+      "error"
+    );
     return;
   }
 
   if (data.session?.user) {
-    showAccount(data.session.user);
+    window.location.replace("index.html");
   }
 }
 
 restoreSession();
 
+// Tizimga kirish va chiqish hodisalari
 supabase.auth.onAuthStateChange((event, session) => {
   if (event === "SIGNED_IN" && session?.user) {
-    showAccount(session.user);
+    window.location.replace("index.html");
   }
 
   if (event === "SIGNED_OUT") {
     showAccount(null);
   }
 });
+```
