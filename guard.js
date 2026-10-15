@@ -1,4 +1,3 @@
-```javascript
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const SUPABASE_URL = "https://zkyfudbyweohpvokimlb.supabase.co";
@@ -11,14 +10,19 @@ const supabase = createClient(
 );
 
 async function protectPage() {
-  const { data, error } = await supabase.auth.getSession();
+  try {
+    const { data, error } = await supabase.auth.getSession();
 
-  if (error || !data.session?.user) {
+    if (error || !data.session?.user) {
+      window.location.replace("auth.html");
+      return;
+    }
+
+    document.documentElement.classList.add("authenticated");
+  } catch (error) {
+    console.error("Sessiyani tekshirish xatosi:", error);
     window.location.replace("auth.html");
-    return;
   }
-
-  document.documentElement.classList.add("authenticated");
 }
 
 protectPage();
@@ -28,4 +32,3 @@ supabase.auth.onAuthStateChange((event) => {
     window.location.replace("auth.html");
   }
 });
-```
