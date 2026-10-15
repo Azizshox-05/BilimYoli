@@ -8,6 +8,11 @@
   <meta name="description" content="BilimYo'li  kompyuter savodxonligi va raqamli bilimlarni o�rganish platformasi.">
   <title>BilimYo'li  Bilim sari yo'l</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+  html:not(.authenticated) body {
+    visibility: hidden;
+  }
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -178,6 +183,7 @@
   </button>
 </div>
 
+<script type="module" src="guard.js"></script>
 <script src="script.js"></script>
 <script type="module" src="account.js"></script>
 </body>
