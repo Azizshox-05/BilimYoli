@@ -269,3 +269,321 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* =========================================
+   BILIMYO'LI — MODERN HOMEPAGE UPGRADE
+   Mavjud funksiyalarni saqlovchi qo'shimcha CSS
+========================================= */
+
+:root {
+  --by-bg: #080d1c;
+  --by-panel: rgba(20, 29, 54, 0.78);
+  --by-border: rgba(159, 180, 255, 0.16);
+  --by-text: #f5f7ff;
+  --by-muted: #aab6d2;
+  --by-blue: #6588ff;
+  --by-purple: #9a70ff;
+  --by-cyan: #57e1e8;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(77, 93, 210, 0.18), transparent 36%),
+    radial-gradient(ellipse at 88% 30%, rgba(123, 66, 201, 0.14), transparent 32%),
+    var(--by-bg);
+  color: var(--by-text);
+}
+
+::selection {
+  background: rgba(101, 136, 255, 0.42);
+  color: white;
+}
+
+/* Yuqori menyu */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 13, 28, 0.84);
+  border-bottom: 1px solid var(--by-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.brand {
+  transition: transform 0.25s ease;
+}
+
+.brand:hover {
+  transform: translateY(-2px);
+}
+
+.brand-icon,
+.mini-logo {
+  box-shadow: 0 0 25px rgba(101, 136, 255, 0.28);
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+  background: rgba(116, 139, 255, 0.12);
+}
+
+.nav-cta,
+.btn-primary {
+  box-shadow: 0 8px 28px rgba(101, 136, 255, 0.24);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav-cta:hover,
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 34px rgba(101, 136, 255, 0.35);
+}
+
+/* Bosh qahramon bo'limi */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 380px;
+  height: 380px;
+  top: 5%;
+  left: -180px;
+  border-radius: 50%;
+  background: rgba(79, 110, 255, 0.12);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.hero-content {
+  animation: by-enter 0.8s ease both;
+}
+
+.hero h1 {
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.about-card h2 span {
+  background: linear-gradient(
+    100deg,
+    var(--by-cyan),
+    #8a9bff 48%,
+    #c49aff
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-content > p,
+.section-heading p,
+.about-card p {
+  color: var(--by-muted);
+  line-height: 1.85;
+}
+
+.hero-art {
+  animation: by-float 6s ease-in-out infinite;
+}
+
+.learning-card {
+  border: 1px solid rgba(174, 190, 255, 0.24);
+  background: linear-gradient(
+    145deg,
+    rgba(38, 50, 91, 0.94),
+    rgba(15, 22, 45, 0.96)
+  );
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.35),
+    0 0 55px rgba(101, 136, 255, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.floating-chip {
+  border: 1px solid var(--by-border);
+  background: rgba(20, 29, 54, 0.9);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+/* Statistikalar */
+.stats-strip {
+  gap: 16px;
+}
+
+.stat-item,
+.panel,
+.about-card {
+  border: 1px solid var(--by-border);
+  background: var(--by-panel);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.stat-item:hover,
+.panel:hover,
+.about-card:hover {
+  border-color: rgba(121, 148, 255, 0.34);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item:hover,
+.panel:hover {
+  transform: translateY(-3px);
+}
+
+/* Kurs kartalari */
+.course-grid {
+  gap: 22px;
+}
+
+.course-grid > * {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.course-grid > *:hover {
+  transform: translateY(-5px);
+  border-color: rgba(113, 144, 255, 0.4);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.course-search input {
+  color: var(--by-text);
+}
+
+.course-search input::placeholder {
+  color: #8794b2;
+}
+
+.filter-btn {
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Natijalar */
+.progress-track,
+.demo-progress {
+  overflow: hidden;
+}
+
+.progress-track span,
+.demo-progress span {
+  transition: width 0.5s ease;
+}
+
+/* Tugmalar */
+button,
+.btn,
+.text-link {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--by-cyan);
+  outline-offset: 4px;
+}
+
+/* Kurs oynasi */
+.workspace-dialog {
+  border: 1px solid var(--by-border);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+}
+
+/* Pastki qism */
+.footer {
+  border-top: 1px solid var(--by-border);
+  background: rgba(5, 9, 20, 0.55);
+}
+
+.footer a {
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--by-cyan);
+}
+
+/* Kirish animatsiyasi */
+@keyframes by-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes by-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* Telefon ekranlari */
+@media (max-width: 760px) {
+  .hero h1 {
+    letter-spacing: -0.025em;
+  }
+
+  .stats-strip {
+    gap: 10px;
+  }
+
+  .course-grid {
+    gap: 14px;
+  }
+
+  .hero-art {
+    animation-duration: 8s;
+  }
+}
+
+/* Animatsiyani kamaytirishni xohlaganlar uchun */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
