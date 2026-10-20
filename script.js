@@ -3,7 +3,7 @@
 
 const courses = [
   {
-    id: "computer", icon: "??", category: "Boshlang'ich",
+    id: "computer", icon: "💻", category: "Boshlang'ich",
     title: "Kompyuter bilan tanishuv",
     description: "Kompyuter qismlari, ularning vazifalari va to'g'ri foydalanish.",
     color: "#9d8cff",
@@ -54,7 +54,7 @@ Sichqonchaning chap tugmasi tanlash uchun, o'ng tugmasi esa qo'shimcha menyuni o
     ]
   },
   {
-    id: "files", icon: "??", category: "Boshlang'ich",
+    id: "files", icon: "📁", category: "Boshlang'ich",
     title: "Fayl va papkalar",
     description: "Fayl yaratish, nomlash, saqlash va tartiblashni o'rganing.",
     color: "#78a8ff",
@@ -102,7 +102,7 @@ Fayl nomi uning mazmunini bildirishi maqsadga muvofiq. Masalan, 'Informatika_ref
     ]
   },
   {
-    id: "internet", icon: "??", category: "Boshlang'ich",
+    id: "internet", icon: "🌐", category: "Boshlang'ich",
     title: "Internet va brauzer",
     description: "Veb-sahifalar, qidiruv tizimlari va internetdan foydalanish.",
     color: "#69d9d0",
@@ -142,7 +142,7 @@ Noma'lum saytlardan dastur yoki fayl yuklab olmang. Shubhali reklama va 'kompyut
     ]
   },
   {
-    id: "word", icon: "??", category: "Amaliy",
+    id: "word", icon: "📝", category: "Amaliy",
     title: "Microsoft Word asoslari",
     description: "Matn yozish, formatlash va hujjatlarni saqlash.",
     color: "#76a9ff",
@@ -186,7 +186,7 @@ Word dasturida File > Save As yoki Export orqali PDF formatini tanlash mumkin. M
     ]
   },
   {
-    id: "excel", icon: "??", category: "Amaliy",
+    id: "excel", icon: "📊", category: "Amaliy",
     title: "Microsoft Excel asoslari",
     description: "Jadval tuzish, formulalar va oddiy hisob-kitoblar.",
     color: "#75e2ad",
@@ -274,7 +274,7 @@ Muhim fayllarning zaxira nusxasini saqlash ham ma'lumot yo'qolishidan himoyalani
     ]
   },
   {
-    id: "email", icon: "??", category: "Amaliy",
+    id: "email", icon: "📧", category: "Amaliy",
     title: "Elektron pochta",
     description: "Email yuborish, fayl biriktirish va xat odobini o'rganing.",
     color: "#e3a4ff",
@@ -317,7 +317,7 @@ Maxfiy hujjatlarni yuborishda qabul qiluvchining manzili va faylga kirish huquqi
     ]
   },
   {
-    id: "ai", icon: "??", category: "Amaliy",
+    id: "ai", icon: "🤖", category: "Amaliy",
     title: "Sun'iy intellekt asoslari",
     description: "AI vositalari, samarali savollar va javoblarni tekshirish.",
     color: "#f5c875",
@@ -366,7 +366,7 @@ AI'dan o'rganish va fikrlarni rivojlantirish uchun foydalaning, lekin uni xatosi
     ]
   },
   {
-    id: "digital", icon: "??", category: "Boshlang'ich",
+    id: "digital", icon: "📱", category: "Boshlang'ich",
     title: "Raqamli savodxonlik",
     description: "Onlayn xizmatlar, raqamli odob va axborotni baholash.",
     color: "#f2a7c9",
@@ -731,18 +731,17 @@ function renderDashboard() {
     best === 100 ? "Ajoyib! Mukammal natija!" : "Yaxshi natija ' yana mashq qiling!";
 
   const achievements = [
-    { icon: "??", title: "Birinchi qadam", desc: "Birinchi darsni tugatish", earned: done >= 1 },
-    { icon: "??", title: "Bilim izlovchi", desc: "5 ta darsni tugatish", earned: done >= 5 },
-    { icon: "??", title: "Faol o'quvchi", desc: "Barcha darslarni tugatish", earned: done >= TOTAL_LESSONS },
-    { icon: "?", title: "Yuqori natija", desc: "Testdan 80% yoki ko'proq olish", earned: Object.values(state.scores).some(score => score >= 80) },
-    { icon: "??", title: "Mukammal test", desc: "Testdan 100% olish", earned: Object.values(state.scores).some(score => score === 100) }
-  ];
+  { icon: "🌱", title: "Birinchi qadam", desc: "Birinchi darsni tugatish", earned: done >= 1 },
+{ icon: "🔎", title: "Bilim izlоvchi", desc: "5 ta darsni tugatish", earned: done >= 5 },
+{ icon: "🎓", title: "Faol o'quvchi", desc: "Barcha darslarni tugatish", earned: done >= TOTAL_LESSONS },
+{ icon: "🏆", title: "Yuqori natija", desc: "Testdan 80% yoki ko'proq olish", earned: Object.values(state.scores).some(score => score >= 80) },
+{ icon: "💎", title: "Mukammal test", desc: "Testdan 100% olish", earned: Object.values(state.scores).some(score => score === 100) }
 
   document.getElementById("achievementList").innerHTML = achievements.map(item => `
     <div class="achievement ${item.earned ? "earned" : ""}">
       <span class="achievement-icon">${item.icon}</span>
       <span><strong>${escapeHTML(item.title)}</strong><br>${escapeHTML(item.desc)}</span>
-      <span>${item.earned ? "?" : "??"}</span>
+      <span>${item.earned ? "✅" : "🔒"}</span>
     </div>
   `).join("");
 
@@ -812,10 +811,9 @@ function renderCourseView() {
     <div class="lesson-nav">
       ${course.lessons.map((lesson, index) => `
         <button class="lesson-tab ${index === currentLessonIndex ? "active" : ""}" data-lesson="${index}">
-          ${state.completed[course.id + ":" + index] ? "? " : ""}${index + 1}. ${escapeHTML(lesson.title)}
-        </button>
+         ${state.completed[course.id + ":" + index] ? "✅ " : ""}${index + 1}. ${escapeHTML(lesson.title)}
       `).join("")}
-      <button class="lesson-tab" data-start-quiz="true">?? Test</button>
+      <button class="lesson-tab" data-start-quiz="true">📝 Test</button>
     </div>
     <div id="lessonBody"></div>
   `;
