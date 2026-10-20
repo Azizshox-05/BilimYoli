@@ -230,7 +230,7 @@ Diagrammalar raqamlarni ko'rgazmali ko'rsatadi. Masalan, oylar bo'yicha savdoni 
     ]
   },
   {
-    id: "security", icon: "???", category: "Xavfsizlik",
+    id: "security", icon: "🔒", category: "Xavfsizlik",
     title: "Internet xavfsizligi",
     description: "Kuchli parol, firibgarlik va shaxsiy ma'lumotlarni himoyalash.",
     color: "#ffad91",
